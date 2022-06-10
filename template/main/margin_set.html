@@ -1,0 +1,52 @@
+{% extends 'main/base.html' %} {% block content %}
+<main class="main users chart-page" id="skip-target">
+  <div class="container">
+    <h2 class="main-title">Dashboard</h2>
+    {% block contenido %} {% endblock contenido %}
+    <div class="row stat-cards">
+
+      <div class="col-md-6 col-xl-6">
+        <article class="stat-cards-item">
+          <div class="stat-cards-icon warning">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-file" aria-hidden="true">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+              <polyline points="13 2 13 9 20 9"></polyline>
+            </svg>
+          </div>
+          <div class="stat-cards-info">
+            <p class="stat-cards-info__num">40 %</p>
+            <p class="stat-cards-info__title">Default Margin</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-xl-6">
+        <article class="stat-cards-item">
+          <div class="stat-cards-icon purple">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-file" aria-hidden="true">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+              <polyline points="13 2 13 9 20 9"></polyline>
+            </svg>
+          </div>
+          <div class="stat-cards-info">
+            <form method="POST">
+              {% csrf_token %}
+              {{ form }}
+              <p class="stat-cards-info__num">
+              <div>
+                <div class="input-group">
+                  <input id="new_margin" type="number" name="new_margin" value="{{ margin }}">
+                  <span class="stat-cards-info__num">%</span>
+                </div>
+              </div>
+              </p>
+              <p class="stat-cards-info__title"></p>
+              <button class="primary-default-btn" type="submit" name="margin">Set new Margin</button>
+            </form>
+
+          </div>
+</main>
+{% endblock %}

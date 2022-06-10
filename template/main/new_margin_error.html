@@ -1,0 +1,10 @@
+{% extends 'main/margin_set.html' %}
+{% block contenido %}
+{% csrf_token %}
+
+<h1 class="main-title"><span class="notification-dropdown-icon danger"></span>&nbsp;ERROR: Invalid Margin. Ensure the
+    value is between 0
+    and 100
+</h1>
+
+{% endblock contenido %}

@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container">
+    {% block contenido %}
+    {% endblock contenido %}
+    <div class="row stat-cards">
+    </div>
+    <div class="row">
+        <div class="col-lg-10">
+            <h4 class="main-title" style="text-align: center;">Nunca Vendido por MF </h4>
+        </div>
+        <div class="col-lg-2">
+            <div class="main-btns-wrapper button">
+                <a href="/neverSoldExport">
+                    <button class="primary-default-btn" type="button">Export&nbsp;&nbsp;<span class="icon arrow-down"
+                            aria-hidden="true"></span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="users-table table-wrapper">
+                <table class="users-table table">
+                    <thead>
+                        <tr>
+                            <th>Product&nbsp;&nbsp;</th>
+                            <th>ProductType</th>
+                            <th>IH</th>
+                            <th>CH</th>
+                            <th>NT</th>
+                            <th>Precio a Comprar(€)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if d %}
+                        {% for i in d %}
+                        <tr>
+                            <td>{{i.Product}}</td>
+                            <td>{{i.ProductType}}</td>
+                            <td>{{i.IH}}</td>
+                            <td>{{i.CH}}</td>
+                            <td>{{i.NT}}</td>
+                            <td>{{i.PrecioAComprar}}</td>
+                        </tr>
+                        {% endfor %}
+                        {% endif %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

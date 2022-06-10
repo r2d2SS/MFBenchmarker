@@ -1,0 +1,7 @@
+{% extends 'main/margin_set.html' %}
+{% block contenido %}
+{% csrf_token %}
+
+<h1 class="main-title"><span class="icon category"></span>&nbsp;&nbsp;Your margin is set to {{ margin }} now</h1>
+
+{% endblock contenido %}

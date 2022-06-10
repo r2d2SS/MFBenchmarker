@@ -1,0 +1,145 @@
+{% extends 'main/base.html' %}
+
+
+{% block content  %}
+<div class="container">
+    {% block contenido %}
+    {% endblock contenido %}
+    <div class="row stat-cards">
+    </div>
+    <div class="row">
+        <div class="col-lg-10">
+            <h4 class="main-title" style="text-align: center;">Out of Stock </h4>
+        </div>
+        <div class="col-lg-2">
+            <a href="/outOfStockExport">
+                <button class="primary-default-btn" type="button">Export&nbsp;&nbsp;<span class="icon arrow-down"
+                                                                                          aria-hidden="true"></span>
+                </button>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="users-table table-wrapper">
+                <table class="users-table table">
+                    <thead>
+                    <tr>
+                        <th>SKU</th>
+                        <th>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <select name="marca" id="marca" onChange="form.submit();">
+                                    <option value="marca">Marca</option>
+                                    <option value="Alec Bradley">Alec Bradley</option>
+                                    <option value="A Flores">A Flores</option>
+                                    <option value="Arturo Fuentes">Arturo Fuentes</option>
+                                    <option value="AJ Fernandez">AJ Fernandez</option>
+                                    <option value="Ashton">Ashton</option>
+                                    <option value="Avo">Avo</option>
+                                    <option value="Blind Mans Bluff">Blind Mans Bluff</option>
+                                    <option value="Bolivar">Bolivar</option>
+                                    <option value="Camacho">Camacho</option>
+                                    <option value="Caldwell">Caldwell</option>
+                                    <option value="Cibao">Cibao</option>
+                                    <option value="Cohiba">Cohiba</option>
+                                    <option value="Condega">Condega</option>
+                                    <option value="Cuaba">Cuaba</option>
+                                    <option value="Davidoff">Davidoff</option>
+                                    <option value="Diplomaticos">Diplomaticos</option>
+                                    <option value="Drew Estate">Drew Estate</option>
+                                    <option value="EP Carrillo">EP Carrillo</option>
+                                    <option value="Fonseca">Fonseca</option>
+                                    <option value="La Gloria Cubana">La Gloria Cubana</option>
+                                    <option value="Guantanamera">Guantanamera</option>
+                                    <option value="Hoyo de Monterrey">Hoyo de Monterrey</option>
+                                    <option value="H Upmann">H Upmann</option>
+                                    <option value="Joya de Nicaragua">Joya de Nicaragua</option>
+                                    <option value="Jose L Piedra">Jose L Piedra</option>
+                                    <option value="Juan Lopez"> Juan Lopez</option>
+                                    <option value="K By Karen">K By Karen</option>
+                                    <option value="The King is Dead">The King is Dead</option>
+                                    <option value="Kraken">Kraken</option>
+                                    <option value="La Aurora">La Aurora</option>
+                                    <option value="La Aroma del Caribe">La Aroma del Caribe</option>
+                                    <option value="La Ley">La Ley</option>
+                                    <option value="La Flor de Cano">La Flor de Cano</option>
+                                    <option value="Long Live The King">Long Live The King</option>
+                                    <option value="Montecristo">Montecristo</option>
+                                    <option value="My Father">My Father</option>
+                                    <option value="Mombacho">Mombacho</option>
+                                    <option value="Nub">Nub</option>
+                                    <option value="Oliva">Oliva</option>
+                                    <option value="Partagas">Partagas</option>
+                                    <option value="Padron">Padron</option>
+                                    <option value="Perdomo">Perdomo</option>
+                                    <option value="Plasencia">Plasencia</option>
+                                    <option value="Por Larrañaga">Por Larrañaga</option>
+                                    <option value="La Preferida">La Preferida</option>
+                                    <option value="Punch">Punch</option>
+                                    <option value="Quai Dorsay">Quai Dorsay</option>
+                                    <option value="Quintero">Quintero</option>
+                                    <option value="Ramon Allones">Ramon Allones</option>
+                                    <option value="Rey del Mundo">Rey del Mundo</option>
+                                    <option value="Rafael Gonzalez">Rafael Gonzalez</option>
+                                    <option value="Romeo y Julieta">Romeo y Julieta</option>
+                                    <option value="El Saman">El Saman</option>
+                                    <option value="Savages">Savages</option>
+                                    <option value="San Cristobal de la Habana">San Cristobal de la Habana</option>
+                                    <option value="Selection">Selection</option>
+                                    <option value="Saint Luis Rey">Saint Luis Rey</option>
+                                    <option value="Sancho Panza">Sancho Panza</option>
+                                    <option value="Saint Luis Rey">Saint Luis Rey</option>
+                                    <option value="Toscano">Toscano</option>
+                                    <option value="Trinidad">Trinidad</option>
+                                    <option value="Umnum">Umnum</option>
+                                    <option value="Vegueros">Vegueros</option>
+                                    <option value="Vegas Robaina">Vegas Robaina</option>
+                                    <option value="Vegafina">Vegafina</option>
+                                </select>
+                            </form>
+                        </th>
+                        <th>TA</th>
+                        <th>CO</th>
+                        <th>DV</th>
+                        <th>GE</th>
+                        <th>LP</th>
+                        <th>RA</th>
+                        <th>LA</th>
+                        <th>CF</th>
+                        <th>IH</th>
+                        <th>CH</th>
+                        <th>NT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if d %}
+                    {% for i in d %}
+                    <tr>
+                        <td>{{i.sku}}</td>
+                        <td>{{i.marca}}</td>
+                        <td>{{i.TA}}</td>
+                        <td>{{i.CO}}</td>
+                        <td>{{i.DV}}</td>
+                        <td>{{i.GE}}</td>
+                        <td>{{i.LP}}</td>
+                        <td>{{i.RA}}</td>
+                        <td>{{i.LA}}</td>
+                        <td>{{i.CF}}</td>
+                        <td>{{i.IH}}</td>
+                        <td>{{i.CH}}</td>
+                        <td>{{i.NT}}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
