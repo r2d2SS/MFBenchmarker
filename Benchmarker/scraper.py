@@ -441,7 +441,6 @@ with SSHTunnelForwarder(
     df = pd.read_sql(query, conn)
 
     # df1 = seleccionamos todos los valores que hayan sido extraidos hoy
-    # " + str(today) + "'
     query = "SELECT * FROM wordpress.scraper WHERE ExtractionDate = '" + str(today) + "'"
     df1 = pd.read_sql(query, conn)
 
