@@ -1,5 +1,4 @@
 from multiprocessing import context
-from numpy import double
 import requests
 from django.shortcuts import render
 import json
@@ -107,11 +106,6 @@ with SSHTunnelForwarder(
 
     def out_marcas_filter(value):
         return """SELECT * FROM outOfStock_pivot WHERE marca = '""" + value + """'; """
-
-
-    def margin_value(request):
-        return render(request, 'cv-form.html', {'form': form})
-
 
     conn.commit()
     conn.close()
@@ -305,7 +299,7 @@ def margin_set(request):
                 conn.close()
                 return render(request, 'main/new_margin.html', {'margin': form})
             else:
-                form = form['new_margin'].value
+                form = formOriginal['new_margin'].value
                 conn.close()
                 return render(request, 'main/new_margin_error.html', {'margin': form})
         else:
