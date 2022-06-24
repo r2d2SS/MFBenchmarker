@@ -11,11 +11,10 @@ Follow the following Script:
    3. pip3 install pandas
    4. pip3 install sshtunnel
    5. pip3 install pymysql
-   6. pip3 install Django
-   7. pip3 install requests
+   6. pip3 install requests
 4. Run the application from terminal with:
 
-   python3.10 ./manage.py runserver
+   python ./manage.py runserver
 
 
 
