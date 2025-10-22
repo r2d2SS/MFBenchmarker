@@ -16,8 +16,8 @@
             </svg>
           </div>
           <div class="stat-cards-info">
-            <p class="stat-cards-info__num">40 %</p>
-            <p class="stat-cards-info__title">Default Margin</p>
+            <p class="stat-cards-info__num">{{ current_margin }} %</p>
+            <p class="stat-cards-info__title">Current Margin</p>
           </div>
         </article>
       </div>
@@ -48,5 +48,58 @@
             </form>
 
           </div>
+        </article>
+      </div>
+    </div>
+    
+    <!-- Additional Stats Row -->
+    <div class="row stat-cards">
+      <div class="col-md-4 col-xl-4">
+        <article class="stat-cards-item">
+          <div class="stat-cards-icon success">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <div class="stat-cards-info">
+            <p class="stat-cards-info__num">{{ total_products }}</p>
+            <p class="stat-cards-info__title">Total Products</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-4 col-xl-4">
+        <article class="stat-cards-item">
+          <div class="stat-cards-icon primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+            </svg>
+          </div>
+          <div class="stat-cards-info">
+            <p class="stat-cards-info__num">{{ in_stock_count }}</p>
+            <p class="stat-cards-info__title">In Stock</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-4 col-xl-4">
+        <article class="stat-cards-item">
+          <div class="stat-cards-icon warning">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <div class="stat-cards-info">
+            <p class="stat-cards-info__num">{{ out_of_stock_count }}</p>
+            <p class="stat-cards-info__title">Out of Stock</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    
+  </div>
 </main>
 {% endblock %}
